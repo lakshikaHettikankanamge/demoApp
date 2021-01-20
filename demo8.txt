@@ -1,0 +1,12 @@
+@OneToMany(fetch = LAZY)
+        @JoinColumn(name = "orguserId", referencedColumnName = "orguserId")
+        List<OrgUser> orgusers;
+
+{
+    "username":"nini",
+    "password":"12354"
+}
+
+@OneToMany(fetch = LAZY)
+        @JoinColumn(name = "orguserId", referencedColumnName = "orguserId")
+        List<OrgUser> orgusers;
