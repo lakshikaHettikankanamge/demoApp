@@ -41,6 +41,7 @@ public class OrganizationService {
         Organization Organization = organizationRepository
                 .save(mapToOrganization(OrganizationDto));
         OrganizationDto.setId(Organization.getOrgId());
+        //userRepository.save(null);
         return OrganizationDto;
     }
 
@@ -48,7 +49,7 @@ public class OrganizationService {
     public OrganizationDto getOrganization(Long orgid){
         Organization organization = organizationRepository.findById(orgid)
                 .orElseThrow(()-> new OrganizationNotFoundException
-                        ("Organization not found with id - "+orgid));
+                        ("Organization not found with id - "+orgid));          //
         return mapToDto(organization);
     }
 

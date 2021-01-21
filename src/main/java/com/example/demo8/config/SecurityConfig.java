@@ -32,12 +32,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
     @Override
     public void configure(HttpSecurity httpSecurity) throws Exception {
-        httpSecurity.csrf().disable()
+        httpSecurity.cors().and().csrf().disable()
                 .authorizeRequests()
                 .antMatchers("/api/auth/**")
                 .permitAll()
                 .antMatchers(HttpMethod.GET, "/api/user/organizations",
-                        "/api/user/accountVerification","/api/user/AccountDeny") //use/**
+                        "/api/user/accountVerification/*","/api/user/accountDeny/*") 
                 .permitAll()
                 .antMatchers("/v2/api-docs",
                         "/configuration/ui",

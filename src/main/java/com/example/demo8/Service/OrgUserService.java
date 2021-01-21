@@ -63,7 +63,7 @@ public class OrgUserService {
 //                .save(mapToOrgUser(OrgUserDto));
         OrgUserDto.setId(orgUser.getOrguserId());
         String message = mailContentBuilder.build("Thank you for signing up , please click on the below url to activate your account : "
-                + ACTIVATION_EMAIL + "/" + orgUser.getOrguserId()+"/n To deny invitation click following"+DENY_EMAIL+orgUser.getOrguserId());
+                + ACTIVATION_EMAIL + "/" + orgUser.getOrguserId()+"/n To deny invitation click following"+DENY_EMAIL+"/" +orgUser.getOrguserId());
 
         mailService.sendMail(new NotificationEmail("Please Activate your account",OrgUserDto.getEmail(), message));
         return OrgUserDto ;
